@@ -128,7 +128,22 @@ function init() {
 		myMap.geoObjects.add(placemark);
 		i = i + 1; // i++;
 	}
+	var i = 0;
+	while(i < data.length) {
+		var row_data = data[i];
 
+		var x = Number(row_data[10];
+		var y = Number(row_data[9];
+		var text = row_data[0];
+		console.log(x,y,text);
+
+		var placemark = new ymaps.Placemark([x, y], {
+			content: text,
+			balloonContent: text + " тут!Э"
+		});
+		myMap.geoObjects.add(placemark);
+		i = i + 1; // i++;
+	}
 	var myControlGroup = new ymaps.control.Group({
         items: [
         new ymaps.control.Button('Первый'), 
